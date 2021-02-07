@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .a{
+      color: red;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(movie,index) in movies" v-bind:class="{a:istrue,b:isfalse}" v-on:click='btnclick'>{{movie}}</li>
+    </ul>
+    </div>
+  <script src="../js/vue.js"></script>
+  <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          message: '你好啊',
+          movies:['美丽人生','爱情公寓','忠犬八公的故事','怦然心动'],
+          istrue:false,
+          isflase: false,
+
+          },
+          methods:{
+            btnclick:function (){
+               console.log(this.index)
+            }
+        }
+      })
+  </script>
+</body>
+</html>

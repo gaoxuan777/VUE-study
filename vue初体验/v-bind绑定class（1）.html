@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .first{
+      color: red;
+    }
+    .second{
+      float: right;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+      {{message}}
+    <p v-bind:class="{first:istrue,second:isflase}">sss</p>
+    <p v-bind:class="getclass()">er</p>
+    <button v-on:click="red">变红</button>
+    </div>
+  <script src="../js/vue.js"></script>
+  <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          message: '你好啊',
+          istrue:true,
+          isflase:true
+        },
+        methods:{
+          red:function (){
+            this.istrue=!this.istrue
+          },
+          getclass:function (){
+            return {first:this.istrue,second:this.isflase}
+          }
+        }
+      })
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .active{
+      color: pink;
+    }
+    .run{
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+
+    <p :class="[active,'deactivate']" v-cloak>{{message}}</p>
+    </div>
+  <script src="../js/vue.js"></script>
+  <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          message: '你好啊',
+          active:'run'
+        }
+      })
+  </script>
+</body>
+</html>

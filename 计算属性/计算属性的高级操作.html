@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{totalAge}}
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        people:[
+            {id:1,name:'cml',age:20},
+            {id:2,name:'gxa',age:21},
+            {id:3,name:'lgz',age:30},
+        ]
+      },
+      computed:{
+        totalAge:function (){
+          let ages=0
+          for(let i=0;i<this.people.length;i++){
+            ages=ages+this.people[i].age
+          }
+          return ages
+        }
+      }
+
+    })
+</script>
+</body>
+</html>
