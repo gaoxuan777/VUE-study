@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .changecolor{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <li v-for="(item,index) in people" v-bind:class={changecolor:index===classindex} @click="liclick(index)">{{item}}</li>
+  </ul>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        people:['高旭桉','陈明龙2','李光洙','李善博'],
+        classindex:0
+      },
+      methods:{
+        liclick(index){
+          this.classindex=index
+        }
+          }
+
+
+
+    })
+</script>
+</body>
+</html>

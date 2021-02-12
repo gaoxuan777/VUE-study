@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <label v-for="item in likepeople" :for="item">
+    <input type="checkbox" :id="item" :value="item" v-model="char">{{item}}
+  </label>
+  {{char}}
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '你好啊',
+        char:[],
+        likepeople:['另','一','个','时','空','的','我','们']
+      }
+    })
+</script>
+</body>
+</html>

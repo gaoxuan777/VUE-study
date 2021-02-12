@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <li v-for="item in number">{{item}}</li>
+  </ul>
+  <button @click="btnclick">try</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        number:[1,2,3,4]
+      },
+      methods:{
+        btnclick(){
+          // this.number.pop()
+          // this.number.shift()
+          // this.number.unshift('追加1','追加2')
+          // this.number.splice(2,1,5)
+          // this.number.reverse()
+          Vue.set(this.number,1,9)
+        }
+      }
+    })
+</script>
+</body>
+</html>

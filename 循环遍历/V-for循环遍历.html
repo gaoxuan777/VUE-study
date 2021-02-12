@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <li v-for="(item,key,index) in gaoxuan">{{key}}:{{item}}:{{index}}</li>
+  </ul>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        people:['12','高','陈'],
+        gaoxuan:{
+          age:21,
+          hobby:'soccer',
+          sex:'boy'
+        }
+      }
+    })
+</script>
+</body>
+</html>
