@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+<cpn @itemclick="cpnclick"></cpn>
+</div>
+<template id="cpn">
+  <div>
+    <button v-for="item in cata" @click="btnClick(item)">{{item.name}}</button>
+  </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  const cpn={template:'#cpn'
+  ,data(){return{
+    cata:[{id:'aaa',name:'热门推荐'},
+    {id:'bbb',name:'家用家电'},
+    {id:'ccc',name:'智能电视'}]
+    }},
+  methods:{btnClick(item)
+    {
+      this.$emit('itemclick')
+    }
+  }}
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '你好啊'
+      },
+      components:{cpn},
+      methods: {
+        cpnclick(item){
+          console.log(111,item);
+        }
+      }
+    })
+</script>
+</body>
+</html>

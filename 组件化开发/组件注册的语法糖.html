@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn></cpn>
+  <cpn2></cpn2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  Vue.component('cpn',{
+    template:`
+    <div>
+    <h2>语法糖</h2>
+</div>`
+  })
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '你好啊'
+      },
+      components:{
+        cpn2:{template: `<div>啊哈哈哈</div>`}
+      }
+    })
+</script>
+</body>
+</html>

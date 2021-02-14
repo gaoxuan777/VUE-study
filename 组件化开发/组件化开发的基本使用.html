@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpnc></cpnc>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const cpnc=Vue.extend({
+    template:`
+    <div>
+    <h1>你好,我是高</h1>
+    <p>哈哈哈哈哈哈哈哈哈</p>
+</div>`
+      }
+  )
+  Vue.component('cpnc',cpnc)
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: `你好
+        啊
+        是`
+      }
+    })
+</script>
+</body>
+</html>
