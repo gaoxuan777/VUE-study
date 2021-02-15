@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn></cpn>
+  <cpn>
+    <template slot-scope="slot">
+
+        <span v-for="item in slot.data">{{item}}-</span>
+
+    </template>
+  </cpn>
+
+  <cpn></cpn>
+</div>
+<template id="cpn">
+  <div>
+    <slot :data="books">
+    <ul>
+      <li v-for="item in books">{{item}}</li>
+    </ul>
+      </slot>
+  </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '你好啊',
+      },
+      components:{
+        cpn:{
+          template:'#cpn',
+          data(){
+            return{
+               books:['西萨城','时代的','顶顶顶','大多数']
+            }
+          }
+        }
+      }
+    })
+</script>
+</body>
+</html>
